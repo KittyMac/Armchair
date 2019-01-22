@@ -1343,12 +1343,11 @@ open class Manager : ArmchairManager {
             modalPanelOpen = false
             
             // get the top most controller (= the StoreKit Controller) and dismiss it
-            if let presentingController = UIApplication.shared.keyWindow?.rootViewController {
-                if let topController = Manager.topMostViewController(presentingController) {
-                    topController.dismiss(animated: usesAnimation) {}
-                    currentStatusBarStyle = UIStatusBarStyle.default
-                }
+            if let storeViewController = storeViewController {
+                storeViewController.dismiss(animated: usesAnimation) {}
+                currentStatusBarStyle = UIStatusBarStyle.default
             }
+            storeViewController = nil
         }
         if let closure = self.didDismissModalViewClosure {
             closure(usedAnimation)
@@ -1403,6 +1402,9 @@ open class Manager : ArmchairManager {
         }
     }
     
+    
+    fileprivate var storeViewController:SKStoreProductViewController?
+    
     fileprivate func rateApp() {
         
         userDefaultsObject?.setBool(true, forKey: keyForArmchairKeyType(ArmchairKey.RatedCurrentVersion))
@@ -1413,35 +1415,45 @@ open class Manager : ArmchairManager {
             // Use the in-app StoreKit view if set, available (iOS 7+) and imported. This works in the simulator.
             if opensInStoreKit {
                 
-                let storeViewController = SKStoreProductViewController()
                 
-                var productParameters: [String:AnyObject]! = [SKStoreProductParameterITunesItemIdentifier : appID as AnyObject]
-                
-                if (operatingSystemVersion >= 8) {
-                    productParameters[SKStoreProductParameterAffiliateToken] = affiliateCode as AnyObject?
-                    productParameters[SKStoreProductParameterCampaignToken] = affiliateCampaignCode as AnyObject?
+                // get the top most controller (= the StoreKit Controller) and dismiss it
+                if let storeViewController = storeViewController {
+                    storeViewController.dismiss(animated: usesAnimation) {}
+                    currentStatusBarStyle = UIStatusBarStyle.default
                 }
-                
-                storeViewController.loadProduct(withParameters: productParameters, completionBlock: nil)
-                storeViewController.delegate = self
-                
-                if let closure = willPresentModalViewClosure {
-                    closure(usesAnimation)
-                }
+                storeViewController = nil
                 
                 
-                if let rootController = Manager.getRootViewController() {
-                    rootController.present(storeViewController, animated: usesAnimation) {
-                        self.modalPanelOpen = true
-                        
-                        //Temporarily use a status bar to match the StoreKit view.
-                        self.currentStatusBarStyle = UIApplication.shared.statusBarStyle
-                        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: self.usesAnimation)
+                storeViewController = SKStoreProductViewController()
+                if let storeViewController = storeViewController {
+                    var productParameters: [String:AnyObject]! = [SKStoreProductParameterITunesItemIdentifier : appID as AnyObject]
+                    
+                    if (operatingSystemVersion >= 8) {
+                        productParameters[SKStoreProductParameterAffiliateToken] = affiliateCode as AnyObject?
+                        productParameters[SKStoreProductParameterCampaignToken] = affiliateCampaignCode as AnyObject?
+                    }
+                    
+                    storeViewController.loadProduct(withParameters: productParameters, completionBlock: nil)
+                    storeViewController.delegate = self
+                    
+                    if let closure = willPresentModalViewClosure {
+                        closure(usesAnimation)
+                    }
+                    
+                    
+                    if let rootController = Manager.getRootViewController() {
+                        rootController.present(storeViewController, animated: usesAnimation) {
+                            self.modalPanelOpen = true
+                            
+                            //Temporarily use a status bar to match the StoreKit view.
+                            self.currentStatusBarStyle = UIApplication.shared.statusBarStyle
+                            UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: self.usesAnimation)
+                        }
                     }
                 }
                 
-                //Use the standard openUrl method
             } else {
+                //Use the standard openUrl method
                 if let url = URL(string: reviewURLString()) {
                     UIApplication.shared.openURL(url)
                 }
