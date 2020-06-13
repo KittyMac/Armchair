@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		465CDF2624947A020007CA66 /* Armchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465CDF2524947A020007CA66 /* Armchair.swift */; };
+		465CDF2724947A020007CA66 /* Armchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465CDF2524947A020007CA66 /* Armchair.swift */; };
 		E6A0AF8F19C9D1E800C3A7DC /* ar.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF6F19C9D1E800C3A7DC /* ar.lproj */; };
 		E6A0AF9019C9D1E800C3A7DC /* arm.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF7019C9D1E800C3A7DC /* arm.lproj */; };
 		E6A0AF9119C9D1E800C3A7DC /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF7119C9D1E800C3A7DC /* ca.lproj */; };
@@ -39,7 +41,6 @@
 		E6A0AFAC19C9D1E800C3A7DC /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8C19C9D1E800C3A7DC /* vi.lproj */; };
 		E6A0AFAD19C9D1E800C3A7DC /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8D19C9D1E800C3A7DC /* zh-Hans.lproj */; };
 		E6A0AFAE19C9D1E800C3A7DC /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8E19C9D1E800C3A7DC /* zh-Hant.lproj */; };
-		E6D8B8F119C756A4001AD043 /* Armchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897FF4019AA800700AB5182 /* Armchair.swift */; };
 		E6F6157119C9FFDA00C0B51C /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF7B19C9D1E800C3A7DC /* hu.lproj */; };
 		E6F6157219C9FFDA00C0B51C /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8319C9D1E800C3A7DC /* pl.lproj */; };
 		E6F6157319C9FFDA00C0B51C /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8519C9D1E800C3A7DC /* pt.lproj */; };
@@ -72,12 +73,14 @@
 		E6F6158E19C9FFDA00C0B51C /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8919C9D1E800C3A7DC /* sv.lproj */; };
 		E6F6158F19C9FFDA00C0B51C /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF8C19C9D1E800C3A7DC /* vi.lproj */; };
 		E6F6159019C9FFDA00C0B51C /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E6A0AF7219C9D1E800C3A7DC /* cs.lproj */; };
-		F897FF4119AA800700AB5182 /* Armchair.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897FF4019AA800700AB5182 /* Armchair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		465CDF2424947A020007CA66 /* Armchair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Armchair.h; path = Sources/Armchair/Armchair.h; sourceTree = SOURCE_ROOT; };
+		465CDF2524947A020007CA66 /* Armchair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Armchair.swift; path = Sources/Armchair/Armchair.swift; sourceTree = SOURCE_ROOT; };
+		465CDF2824947A0E0007CA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
+		465CDF2924947A0E0007CA66 /* Info-Localizable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Info-Localizable.plist"; path = "Sources/Info-Localizable.plist"; sourceTree = SOURCE_ROOT; };
 		E6A0AF6519C9CFF400C3A7DC /* Armchair.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Armchair.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6A0AF6819C9CFF500C3A7DC /* Info-Localizable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Localizable.plist"; sourceTree = "<group>"; };
 		E6A0AF6F19C9D1E800C3A7DC /* ar.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ar.lproj; path = Localization/ar.lproj; sourceTree = "<group>"; };
 		E6A0AF7019C9D1E800C3A7DC /* arm.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = arm.lproj; path = Localization/arm.lproj; sourceTree = "<group>"; };
 		E6A0AF7119C9D1E800C3A7DC /* ca.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ca.lproj; path = Localization/ca.lproj; sourceTree = "<group>"; };
@@ -115,9 +118,6 @@
 		E6D8B92B19C880A9001AD043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D8B92C19C880A9001AD043 /* ArmchairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmchairTests.swift; sourceTree = "<group>"; };
 		E6F6159419C9FFDA00C0B51C /* Armchair.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Armchair.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8111E3719A95C8B0040E7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8111E3819A95C8B0040E7D1 /* Armchair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Armchair.h; sourceTree = "<group>"; };
-		F897FF4019AA800700AB5182 /* Armchair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Armchair.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +224,8 @@
 		F8111E3519A95C8B0040E7D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F8111E3819A95C8B0040E7D1 /* Armchair.h */,
-				F897FF4019AA800700AB5182 /* Armchair.swift */,
+				465CDF2424947A020007CA66 /* Armchair.h */,
+				465CDF2524947A020007CA66 /* Armchair.swift */,
 				F8111E3619A95C8B0040E7D1 /* Supporting Files */,
 			);
 			path = Source;
@@ -234,8 +234,8 @@
 		F8111E3619A95C8B0040E7D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8111E3719A95C8B0040E7D1 /* Info.plist */,
-				E6A0AF6819C9CFF500C3A7DC /* Info-Localizable.plist */,
+				465CDF2924947A0E0007CA66 /* Info-Localizable.plist */,
+				465CDF2824947A0E0007CA66 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 						ProvisioningStyle = Manual;
 					};
 					E6D8B8EF19C756A4001AD043 = {
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1140;
 					};
 					F8111E3219A95C8B0040E7D1 = {
 						CreatedOnToolsVersion = 6.0;
@@ -462,7 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D8B8F119C756A4001AD043 /* Armchair.swift in Sources */,
+				465CDF2724947A020007CA66 /* Armchair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F897FF4119AA800700AB5182 /* Armchair.swift in Sources */,
+				465CDF2624947A020007CA66 /* Armchair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +533,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -560,7 +560,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -741,7 +741,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -764,7 +764,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

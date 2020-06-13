@@ -1402,8 +1402,9 @@ open class Manager : ArmchairManager {
         }
     }
     
-    
+    #if os(iOS)
     fileprivate var storeViewController:SKStoreProductViewController?
+    #endif
     
     fileprivate func rateApp() {
         
